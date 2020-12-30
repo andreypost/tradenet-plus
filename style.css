@@ -58,7 +58,7 @@ h4, .header_button {
     font-size: 20px;
 }
 
-.header_limited {
+.header_limited, .footer__term a {
     font-size: 14px;
 }
 
@@ -207,6 +207,40 @@ header .header_free {
     line-height: 19px;
 }
 
+/* footer */
+
+footer {
+    padding-top: 110px;
+    padding-bottom: 20px;
+    background: #394046;
+}
+
+.tooter_seo {
+    padding-top: 20px;
+    border-top: 1px solid #FFFFFF;
+}
+
+.tooter_seo p {
+    line-height: 22px;
+}
+
+.footer__term a {
+   margin-bottom: 20px;
+}
+
+.footer__term a:last-of-type {
+    margin-left: 20px;
+}
+
+
+.footer_social {
+    padding: 20px 0;
+}
+
+.footer_social svg {
+    width: 25px;
+    height: 20px;
+}
 
 
 @media (min-width: 1200px) {}
@@ -231,14 +265,16 @@ header .header_free {
     .experience ul li::marker {
         font-size: 17px;
     }
-    header>.container, .experience, .qualities__dispaly {
+    header>.container, .experience, .qualities__dispaly, .footer__term {
         flex-direction: row !important;
     }
     header>div>nav {
         max-width: 430px;
+    }
+    header>div>nav, .footer__term>img {
         order: 1;
     }
-    header>div>img {
+    header>div>img, .footer__term>div {
         order: 2;
     }
     header nav h4, header .header_limited {
@@ -308,6 +344,15 @@ header .header_free {
     }
     .qualities .header_free {
         margin-top: 60px;
+    }
+    .tooter_seo {
+        padding-top: 48px;
+    }
+    .tooter_seo p {
+        line-height: 24px;
+    }
+    .footer__term a {
+        font-weight: 400;
     }
 }
 
