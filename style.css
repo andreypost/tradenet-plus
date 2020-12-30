@@ -189,6 +189,26 @@ header .header_free {
     color: #1BD895;
 }
 
+/* quizform section */
+.quizform {
+    background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
+}
+
+
+
+
+/* seo section */
+.seo {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background: #FFF0E6;
+}
+.seo p {
+    line-height: 19px;
+}
+
+
+
 @media (min-width: 1200px) {}
 
 @media (min-width: 992px) {
