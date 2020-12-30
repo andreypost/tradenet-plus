@@ -63,15 +63,15 @@ footer ul:not(.footer_challenge) li:first-of-type{
 .header_limited, .footer_seo p, .footer__term a {
     font-size: 14px;
 }
+.connect_form p {
+    font-size: 12px;
+}
 .footer_nav ul li {
     font-size: 10px;
 }
-
-
 .absolute {
     position: absolute;
 }
-
 .black {
     color: #111111;
 }
@@ -195,11 +195,24 @@ header .header_free {
     color: #1BD895;
 }
 
-/* quizform section */
-.quizform {
+/* connect section */
+.connect {
     background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
 }
-
+.connect_form {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    transition: opacity .4s;
+}
+.connect_form p {
+    line-height: 16px;
+    color: #F31212;
+}
+.connect_form form {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
 
 
 
@@ -212,9 +225,7 @@ header .header_free {
 .seo p {
     line-height: 19px;
 }
-
 /* footer */
-
 footer {
     padding-top: 110px;
     padding-bottom: 20px;
@@ -240,7 +251,6 @@ footer {
     width: 25px;
     height: 20px;
 }
-
 .footer_seo {
     padding-top: 20px;
     border-top: 1px solid #FFFFFF;
@@ -251,7 +261,6 @@ footer {
 .footer_social {
     padding: 20px 0;
 }
-
 .footer_social svg, .footer_nav_social svg {
     width: 30px;
     height: 20px;
@@ -262,10 +271,6 @@ footer {
 .footer__term a:last-of-type {
     margin-left: 20px;
 }
-
-
-
-
 
 @media (min-width: 1200px) {}
 
