@@ -18,7 +18,7 @@
     <header>
         <div class="container d-flex justify-content-between align-items-center flex-column">
             <img src="./images/header_mockup.png" class="img-fluid" alt="">
-            <nav class="text-white">
+            <article class="text-white">
                 <h1>Tradenet Plus</h1>
                 <h4 class="font-weight-normal">One month access to Tradenet day trading chat room and demo training
                     account</h4>
@@ -28,13 +28,13 @@
                 <a href=""
                     class="header_button d-flex justify-content-center align-items-center font-weight-bold text-white"
                     onclick="return false">GET NOW</a>
-            </nav>
+            </article>
         </div>
     </header>
     <main>
         <div class="container experience d-flex justify-content-between align-items-center flex-column black">
             <img src="./images/experience_mockup.png" class="img-fluid absolute" alt="">
-            <div class="experience_list bg-white">
+            <article class="experience_list bg-white">
                 <h4 class="font-weight-bold">Boost your day trading experience with Tradenet Plus</h4>
                 <ul>
                     <li>Get your hands-on day trading experience with a simulated demo account without risking any money
@@ -43,7 +43,7 @@
                         in the chat room</li>
                     <li>Ask your questions and get feedback from top traders</li>
                 </ul>
-            </div>
+            </article>
         </div>
         <div class="qualities">
             <div class="container text-white">
@@ -110,7 +110,7 @@
 
                 <div class="connect_form text-white">
                     <h4 class="text-uppercase text-center font-weight-bold">GET YOUR Tradenet <br> Simulator Now!</h4>
-                    <form action="">
+                    <form action="" id="connectForm">
                         <p class="open_sans text-center font-weight-bold text-uppercase d-lg-none">Make sure your
                             details are entered
                             <br> accurately <br>
@@ -120,9 +120,28 @@
                         <p class="open_sans text-center font-weight-bold d-none d-lg-block">Make sure your details are
                             entered accurately <br>
                             Tradenet will reject any incorrectly filled applications</p>
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Email">
-                        <input type="text">    
+                        <div class="connect_form_input">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <select name="country" required>
+                                <option value="" disabled selected hidden>Country</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="USA">USA</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="d-flex connect_checkbox_input">
+                            <input type="checkbox" name="checkbox" id="checkbox" required>
+                            <label for="checkbox">
+                                <span style="color: #ABABAB;"> I consent to receive promotional materials from time
+                                    to time. I, hereby declare that I have
+                                    read, understood and accepted the</span> <span style="color: #2CB06C;">
+                                    Company‘s Terms Conditions | Privacy policy and cookie
+                                    policy </span>
+                            </label>
+                        </div>
+                        <button type="submit" form="connectForm" class="text-white">GET NOW</button>
                     </form>
                 </div>
 
@@ -140,14 +159,13 @@
                     the outcome for most day traders’ efforts. The day trading efforts for the majority of day traders
                     will
                     not be profitable. Research indicates that under 10% of day traders succeed consistently. Contact us
-                    for
-                    reference.</p>
+                    for reference.</p>
             </div>
         </div>
     </main>
     <footer>
         <div class="container open_sans text-white">
-            <div class="footer_nav">
+            <nav class="footer_nav">
                 <ul class="footer_education">
                     <li><span class="d-lg-none">Courses</span><span class="d-none d-lg-block">Education</span></li>
                     <li><a href="">Self-study course</a></li>
@@ -236,7 +254,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </nav>
             <img src="./images/footer_pay.png" class="footer_pay d-none d-lg-block" alt="">
             <div class="footer_seo">
                 <p>Tradenet is a day trading training school. We offer courses including stock trading, CFDs, options,
@@ -294,6 +312,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="./codes.json"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
