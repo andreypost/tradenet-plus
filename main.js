@@ -5,42 +5,42 @@ $.ajax({
     dataType: "jsonp",
     jsonpCallback: "geoip"
     // success: function(data) {
-    // //   console.log("IP: "+data.ip);
+    //   console.log("IP: "+data.ip);
     //   console.log("Country: "+data.country);
-    // //   console.log("Country Code: "+data.country_code);
+    //   console.log("Country Code: "+data.country_code);
     // }
 }).done(function (geo) {
     // console.log(geo, "second success")
 
-   /* $.getJSON("./codes.json", function (data) {
-        // var items = [];
+    $.getJSON("./codes.json", function (data) {
         $.each(data.countries, function (key, val) {
-            if (geo.country == val.name) {
-                console.log(val.code, val.name)
+            if (geo.country === val.name) {
+                $('#connectForm select').val(val.name)
+                $('#connectForm input[name=phone]').val(val.code)
             }
             // jQuery.inArray(geo.country, val.name)
             // items.push("<li id='" + key + "'>" + val + "</li>")
         });
         // $("<ul/>", {
-            // "class": "my-new-list",
-            // html: items.join("")
+        // "class": "my-new-list",
+        // html: items.join("")
         // }).appendTo("body");
-    })*/
+    })
 
 
     $.getJSON("./phone.json", function (data) {
         // var items = [];
         $.each(data, function (key, val) {
-            console.log(key, val)
+            // console.log( geo.country)
             if (geo.country == val.name) {
-                console.log(val.code, val.name)
+                // console.log(val.code, val.name)
             }
             // jQuery.inArray(geo.country, val.name)
             // items.push("<li id='" + key + "'>" + val + "</li>")
         });
         // $("<ul/>", {
-            // "class": "my-new-list",
-            // html: items.join("")
+        // "class": "my-new-list",
+        // html: items.join("")
         // }).appendTo("body");
     })
 
@@ -62,20 +62,47 @@ $.ajax({
 //     });
 
 
-let form = document.getElementById('connectForm')
+
+
+let form = document.getElementById('connectForm'),
+    data = new FormData()
 
 form.onsubmit = (e) => {
     e.preventDefault()
+    for (let elem of form.elements) {
+        elem.value ? data.set(elem.name, elem.value) : null
+    }
+}
+
+const addValue = (key, value) => {
+    data.set(key, value)
+
+    for (let pare of data.entries()) {
+        // console.log((pare[0], pare[1]))
+    }
+
+
+    // fetch('', {
+    //     method: 'POST',
+    //     body: data
+    // })
+    // .then(response => console.log(response.json()))
+    // .catch(error => {
+    //     // console.log(error)
+    // })
 
 }
 
-
-    // fetch('./codes.json')
-    //     .then(response => console.log(response))
-    //     .catch(error => console.log(error))
+addValue()
 
 
-    // console.log(Intl.DateTimeFormat().resolvedOptions().timeZone, Intl)
+
+
+
+
+
+// 
+// console.log(Intl.DateTimeFormat().resolvedOptions(), navigator.languages)
 
 
 
