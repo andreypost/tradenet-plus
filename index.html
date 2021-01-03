@@ -106,9 +106,9 @@
             </div>
         </div>
         <div class="connect">
-            <div class="container">
+            <div class="container relative">
 
-                <div class="connect_form text-white">
+                <div class="connect_form text-white absolute">
                     <h4 class="text-uppercase text-center font-weight-bold">GET YOUR Tradenet <br> Simulator Now!</h4>
                     <form action="" id="connectForm">
                         <p class="open_sans text-center font-weight-bold text-uppercase d-lg-none">Make sure your
@@ -125,13 +125,10 @@
                             <input type="email" name="email" placeholder="Email" required>
                             <select name="country" required>
                                 <option value="" disabled selected hidden>Country</option>
-                                <option value="Ukraine">Ukraine</option>
-                                <option value="USA">USA</option>
-                                <option value="Germany">Germany</option>
                             </select>
-                            <input type="tel" name="phone" required>
+                            <input type="tel" name="phone" placeholder="Phone" required>
                         </div>
-                        <div class="d-flex connect_checkbox_input">
+                        <div class="d-flex connect_form_checkbox">
                             <input type="checkbox" name="checkbox" id="checkbox" required>
                             <label for="checkbox">
                                 <span style="color: #ABABAB;"> I consent to receive promotional materials from time
@@ -144,9 +141,46 @@
                         <button type="submit" form="connectForm" class="text-white">GET NOW</button>
                     </form>
                 </div>
+                
+                <div class="connect_quiz opacity_0 absolute">
+                    <section class="quize_add d-none d-lg-block">
+                        <h2 class="font-weight-bold black">Get Access To Tradenet Plus for Free</h2>
+                        <div class="d-flex flex-wrap quize_add_links">
+                            <div>
+                                <h6>Trading Platform</h6>
+                                <button>Download for
+                                    <svg>
+                                        <use xlink:href="./sprites.svg#window"></use>
+                                    </svg>
+                                </button>
+                                <button>Download for
+                                    <svg>
+                                        <use xlink:href="./sprites.svg#apple"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div>
+                                <h6>Trading Room</h6>
+                                <button>Access Webinato</button>
+                            </div>
+                        </div>
+                    </section>
+                    <article class="quize_start text-center text-white">
+                        <h3 class="font-weight-bold">Let’s start our journey with Tradenet</h3>
+                        <h4 class="font-weight-normal">How do ordinary people become day traders?</h4>
+                        <button class="quize_go text-white">Take THE quiz</button>
+                    </article>
+                </div>
+
+
+
 
             </div>
         </div>
+
+
+
+
         <div class="seo">
             <div class="container black">
                 <p>Tradenet is exclusively a day trading education operation. As such, Tradenet often provides past day

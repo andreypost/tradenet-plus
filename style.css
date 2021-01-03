@@ -73,8 +73,20 @@ footer ul:not(.footer_challenge) li:first-of-type {
     font-size: 10px;
 }
 
+.opacity_0 {
+    opacity: 0;
+}
+
+.relative {
+    position: relative;
+}
+
 .absolute {
     position: absolute;
+}
+
+.quize_start button {
+    text-transform: uppercase;
 }
 
 .black {
@@ -112,8 +124,9 @@ header .header_free {
     transition: background-color .2s;
 }
 
-.header_button:hover, .connect_form button:hover {
+.header_button:hover, .connect_form button:hover, .quize_add_links button:hover {
     background-color: #0069d9;
+    border-color: #0069d9;
 }
 
 /* experience section */
@@ -165,7 +178,7 @@ header .header_free {
     background: var(--blue);
 }
 
-.qualities h2, .qualities__list h4, .qualities__list h3, .qualities__list img, .connect_checkbox_input {
+.qualities h2, .qualities__list h4, .qualities__list h3, .qualities__list img, .connect_form_checkbox {
     margin-bottom: 20px;
 }
 
@@ -212,21 +225,33 @@ header .header_free {
 
 /* connect section */
 
+/* connect_form */
+
 .connect {
+    height: 600px;
     background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
+    transition: height .4s;
 }
+
 .connect_form {
-    padding-top: 40px;
-    padding-bottom: 60px;
-    transition: opacity .4s;
+    z-index: 999;
 }
+
+.connect_form, .connect_quiz {
+    left: 0;
+    right: 0;
+    padding: 40px 15px 60px;
+}
+
 .connect_form h4, .connect_form p {
     margin-bottom: 26px;
 }
+
 .connect_form p {
     line-height: 16px;
     color: #F31212;
 }
+
 .connect_form form {
     max-width: 680px;
     margin: 0 auto;
@@ -235,56 +260,76 @@ header .header_free {
     box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25);
     background: #FFFFFF;
 }
-.connect_form input:not([name="checkbox"]), .connect_form select {
+
+.connect_form_input input, .connect_form_input select {
     width: 100%;
     height: 32px;
     margin-bottom: 12px;
     border-radius: 10px;
 }
-.connect_form input, .connect_form select {
+
+.connect_form input, .connect_form_input select {
     border: 1px solid #ABABAB;
 }
-.connect_form input, .connect_form input::placeholder, .connect_form select {
+
+.connect_form input, .connect_form input::placeholder, .connect_form_input select {
     color: #17181A;
 }
-.connect_form input, .connect_form select {
+
+.connect_form input, .connect_form_input select {
     padding: 0 15px;
 }
-select {
-    background: url(./images/Arrow.svg) no-repeat 95% center;
+
+.connect_form_input select {
+    padding-right: 20px;
+    background: url(./images/Arrow.svg) no-repeat 97% center;
     -webkit-appearance: none;
     -moz-appearance: none;
-    /* background-position-x: 95%; */
 }
-.connect_checkbox_input label {
+
+.connect_form_checkbox label {
     line-height: 12px;
     font-weight: 300;
 }
-#checkbox {
+
+.connect_form_checkbox input {
     margin-right: 12px;
     margin-bottom: auto;
 }
+
 .connect_form button {
     width: 100%;
     height: 42px;
 }
-.connect_form input:focus, .connect_form select:focus {
+
+.connect_form input:focus, .connect_form_input select:focus {
     outline: none;
     border-color: #17181A;
 }
 
+/* connect_quiz */
 
+.connect_quiz {
+    /* min-height: 285px; */
+    /* max-height: 285px; */
+    height: 285px;
+}
 
+.quize_add, .quize_start {
+    margin: 0 auto;
+}
 
+.quize_start h4 {
+    margin-bottom: 20px;
+}
 
-
-
-
-
-
-
-
-
+.quize_start button {
+    width: 200px;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    background-color: transparent;
+}
 
 /* seo section */
 
@@ -371,7 +416,7 @@ footer {
     h1 {
         font-size: 64px;
     }
-    h2 {
+    .qualities h2 {
         font-size: 40px;
     }
     h4 {
@@ -395,16 +440,16 @@ footer {
     header>div>article {
         max-width: 430px;
     }
-    header>div>article, .footer__term>img, .footer_education {
+    header>div>article, .footer__term>img, .footer_education, .connect_form_input input[name="name"] {
         order: 1;
     }
-    header>div>img, .footer__term>div, .footer_about {
+    header>div>img, .footer__term>div, .footer_about, .connect_form_input select[name="country"] {
         order: 2;
     }
-    .footer_programs {
+    .footer_programs, .connect_form_input input[name="email"] {
         order: 3;
     }
-    .footer_contacts {
+    .footer_contacts, .connect_form_input input[name="phone"] {
         order: 4;
     }
     .footer_trading {
@@ -505,11 +550,6 @@ footer {
     .footer__term a {
         font-weight: 400;
     }
-    .connect_form_input {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        justify-content: space-between;
-    }
     .connect_form {
         padding-top: 80px;
         padding-bottom: 80px;
@@ -517,33 +557,83 @@ footer {
     .connect_form h4 {
         margin-bottom: 40px;
     }
+    .connect_form_input {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-content: space-between;
+    }
     .connect_form p {
         margin-bottom: 20px;
     }
-    .connect_form input:not([name="checkbox"]), .connect_form select {
+    .connect_form_input input, .connect_form_input select {
         max-width: 300px;
         height: 38px;
         margin-bottom: 24px;
     }
-    input[name="email"], input[name="phone"] {
+    .connect_form_input select, .connect_form_input input[name="phone"] {
         margin-left: auto;
     }
-
-
     .connect_form button {
         display: block;
         max-width: 200px;
         height: 50px;
         margin: 0 auto;
     }
+    .connect_quiz {
+        /* min-height: 885px; */
+        /* max-height: 885px; */
+        height: 885px;
+    }
+    .quize_add {
+        max-width: 996px;
+        margin-bottom: 40px;
+        padding: 44px 35px 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 90px rgba(0, 0, 0, 0.25);
+        background: #FFFFFF;
+    }
+    .quize_add h2 {
+        margin-bottom: 20px;
+    }
+    .quize_add h6 {
+        margin-bottom: 10px;
+        color: #898989;
+    }
+    .quize_add_links>div:nth-of-type(even) {
+        padding-left: 20px;
+        border-left: 1px solid #898989;
+    }
+    .quize_add button {
+        margin-right: 20px;
+        margin-bottom: 20px;
+        width: 171px;
+        height: 50px;
+        border-radius: 5px;
+        border: 2px solid #FF844F;
+        background: #FF844F;
+        color: #FFFFFF;
+    }
+    .quize_add button svg {
+        width: 30px;
+        height: 30px;
+    }
+    .quize_start {
+        width: 996px;
+        height: 212px;
+        padding: 40px;
+        border: 2px solid #FFFFFF;
+        border-radius: 10px;
+        text-align: left!important;
+        background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
+    }
+    .quize_start h4 {
+        font-size: 20px;
+    }
 }
 
 @media (min-width: 768px) {
     .footer_nav {
         grid-template-columns: 33% 33% 33%;
-    }
-    select {
-        background-position-x: 98%;
     }
 }
 
