@@ -332,6 +332,7 @@ header .header_free {
 }
 
 .connect_question {
+    height: 620px;
     left: 0;
     right: 0;
     margin: 40px 15px 60px;
@@ -348,6 +349,8 @@ header .header_free {
     height: 82px;
     margin-bottom: 10px;
     padding: 20px;
+    line-height: 19px;
+    text-align: left;
     border: 2px solid #D2D3D3;
     border-radius: 5px;
     background-color: transparent;
@@ -357,7 +360,12 @@ header .header_free {
     width: 42px;
     height: 42px;
     margin-right: 10%;
+}
+.question_icon:not(.quest_03_icon_02):not(.quest_03_icon_03) {
     fill: #8A919D;
+}
+.quest_03_icon_02, .quest_03_icon_03 {
+    fill: #FFFFFF;
 }
 
 .connect_question button:hover {
@@ -365,6 +373,10 @@ header .header_free {
 }
 .connect_question button:hover .question_icon{
     fill: #4C1ED3;
+}
+
+.connect_question button:hover .quest_03_icon_02 {
+    /* stroke: #FFFFFF; */
 }
 
 
@@ -629,7 +641,7 @@ footer {
         height: 50px;
         margin: 0 auto;
     }
-    .connect_quiz {
+    .connect_quiz, .connect_question {
         /* min-height: 885px; */
         /* max-height: 885px; */
         height: 885px;
@@ -690,6 +702,8 @@ footer {
     .connect_question button {
         width: 48%;
         height: 192px;
+        line-height: 24px;
+        text-align: center;
         flex-direction: column!important;
         justify-content: center;
         margin-bottom: 30px;

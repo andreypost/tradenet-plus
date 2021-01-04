@@ -80,6 +80,8 @@ $(document).ready(function () {
         $('.connect_quiz').fadeTo('fast', 0, function() {
             $(this).css('z-index', '-99999')
             $('.quest_01').fadeTo('fast', 1)
+            // console.log($(this).outerHeight())
+            $('.connect').height($('.connect_question').outerHeight())
         })
     })
 
