@@ -104,6 +104,11 @@ header {
 
 h1 {
     margin-top: 30px;
+}
+
+h1, .experience_list h4, .qualities h2, .qualities__list h4, .qualities__list h3,
+.qualities__list img, .connect_form_checkbox, .quize_start h4, .footer__term a,
+.connect_question h4 {
     margin-bottom: 20px;
 }
 
@@ -145,7 +150,6 @@ header .header_free {
 }
 
 .experience_list h4 {
-    margin-bottom: 20px;
     line-height: 24px;
 }
 
@@ -176,10 +180,6 @@ header .header_free {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     background: var(--blue);
-}
-
-.qualities h2, .qualities__list h4, .qualities__list h3, .qualities__list img, .connect_form_checkbox {
-    margin-bottom: 20px;
 }
 
 .qualities__list ul {
@@ -231,10 +231,6 @@ header .header_free {
     height: 600px;
     background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
     transition: height .4s;
-}
-
-.connect_form {
-    z-index: 999;
 }
 
 .connect_form, .connect_quiz {
@@ -315,12 +311,11 @@ header .header_free {
     height: 285px;
 }
 
-.quize_add, .quize_start {
-    margin: 0 auto;
-}
-
-.quize_start h4 {
-    margin-bottom: 20px;
+.quize_add, .connect_question {
+    padding: 20px 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 90px rgba(0, 0, 0, 0.25);
+    background: #FFFFFF;
 }
 
 .quize_start button {
@@ -330,6 +325,59 @@ header .header_free {
     border-radius: 10px;
     background-color: transparent;
 }
+
+.quize_start button:hover {
+    color: #FF844F!important;
+    border-color: #FF844F;
+}
+
+.connect_question {
+    left: 0;
+    right: 0;
+    margin: 40px 15px 60px;
+}
+
+.connect_question h6 {
+    color: #ABABAB;
+}
+
+
+
+.connect_question button {
+    width: 100%;
+    height: 82px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 2px solid #D2D3D3;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.question_icon {
+    width: 42px;
+    height: 42px;
+    margin-right: 10%;
+    fill: #8A919D;
+}
+
+.connect_question button:hover {
+    border-color: #4C1ED3;
+}
+.connect_question button:hover .question_icon{
+    fill: #4C1ED3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* seo section */
 
@@ -395,10 +443,6 @@ footer {
     height: 20px;
 }
 
-.footer__term a {
-    margin-bottom: 20px;
-}
-
 .footer__term a:last-of-type {
     margin-left: 20px;
 }
@@ -419,14 +463,23 @@ footer {
     .qualities h2 {
         font-size: 40px;
     }
-    h4 {
+    .connect_question h4 {
+        font-size: 32px;
+    }
+    header h4, .experience_list h4, .qualities__list h4, .connect_form h4, .connect_question h6 {
         font-size: 24px;
+    }
+    .qualities__list ul li, footer .footer_nav ul li:first-of-type, .connect_question button {
+        font-size: 20px;
     }
     .experience ul li::marker {
         font-size: 17px;
     }
     .footer_seo p, .connect_form p {
         font-size: 16px;
+    }
+    .footer_nav ul li {
+        font-size: 14px;
     }
     .connect_form input, .connect_form select {
         font-size: 12px;
@@ -435,6 +488,9 @@ footer {
         font-size: 10px;
     }
     header>.container, .experience, .qualities__dispaly, .footer__term {
+        -webkit-box-orient: horizontal!important;
+        -webkit-box-direction: normal!important;
+        -ms-flex-direction: row!important;
         flex-direction: row !important;
     }
     header>div>article {
@@ -507,7 +563,6 @@ footer {
     }
     .qualities__list ul li {
         line-height: 24px;
-        font-size: 20px;
     }
     .qualities__list img {
         width: 170px;
@@ -531,14 +586,12 @@ footer {
         justify-content: space-between;
     }
     footer .footer_nav ul li:first-of-type {
-        font-size: 20px;
         margin-bottom: 8px;
     }
-    .footer_nav ul li {
-        font-size: 14px;
+    .footer_pay, .connect_form p, .quize_add h2, .quize_add button {
+        margin-bottom: 20px;
     }
     .footer_pay {
-        margin-bottom: 20px;
         margin-left: auto;
     }
     .footer_seo {
@@ -562,9 +615,6 @@ footer {
         grid-template-columns: 50% 50%;
         justify-content: space-between;
     }
-    .connect_form p {
-        margin-bottom: 20px;
-    }
     .connect_form_input input, .connect_form_input select {
         max-width: 300px;
         height: 38px;
@@ -584,16 +634,13 @@ footer {
         /* max-height: 885px; */
         height: 885px;
     }
-    .quize_add {
+    .quize_add, .quize_start, .connect_question {
         max-width: 996px;
+        margin: 0 auto;
+    }
+    .quize_add {
         margin-bottom: 40px;
         padding: 44px 35px 20px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 90px rgba(0, 0, 0, 0.25);
-        background: #FFFFFF;
-    }
-    .quize_add h2 {
-        margin-bottom: 20px;
     }
     .quize_add h6 {
         margin-bottom: 10px;
@@ -605,7 +652,6 @@ footer {
     }
     .quize_add button {
         margin-right: 20px;
-        margin-bottom: 20px;
         width: 171px;
         height: 50px;
         border-radius: 5px;
@@ -615,10 +661,9 @@ footer {
     }
     .quize_add button svg {
         width: 30px;
-        height: 30px;
+        height: 32px;
     }
     .quize_start {
-        width: 996px;
         height: 212px;
         padding: 40px;
         border: 2px solid #FFFFFF;
@@ -626,9 +671,37 @@ footer {
         text-align: left!important;
         background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
     }
-    .quize_start h4 {
-        font-size: 20px;
+
+
+    .connect_question {
+        margin-top: 80px;
+        margin-bottom: 95px;
+        padding: 40px 123px 110px;
     }
+    .connect_question>svg {
+        width: 40px;
+        height: 415px;
+        left: 4%;
+        top: 24%;
+    }
+    .connect_question h4 {
+        margin-bottom: 60px;
+    }
+    .connect_question button {
+        width: 48%;
+        height: 192px;
+        flex-direction: column!important;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .question_icon {
+        width: 70px;
+        height: 70px;
+        margin-right: unset;
+        margin-bottom: 15px;
+    }
+
+   
 }
 
 @media (min-width: 768px) {

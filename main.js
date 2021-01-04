@@ -54,46 +54,49 @@ $(document).ready(function () {
     //       console.log( "complete" );
     //     });
 
-    let data = new FormData()
+    var data = new FormData()
 
     $('#connectForm').submit(function (e) {
         e.preventDefault()
-
         $(this.elements).each(function () {
             this.value ? data.set(this.name, this.value) : null
             // console.log(this.value)
         })
-        
         $('.connect_form').fadeTo('fast', 0, function() {
-            $(this).css('z-index', '-999')
+            $(this).css('z-index', '-99999')
+
             // console.log($('.connect_quiz').height(), $('.connect_quiz').outerHeight())
-
             $('.connect_quiz').fadeTo('fast', 1, function() {
+                $('body,html').animate({scrollTop: $('.connect').offset().top},200)
                 $('.connect').height($(this).outerHeight())
-                // $(this).css('z-index', 9999)
-
-                $('.quize_go').click(function () {
-                    $('.connect_quiz').fadeIn('fast', 0, function() {
-
-                    })
-                })
             })
-        })
-        
-        // $('.connect_form').fadeTo('fast', 0, function () {
-        //     $('.quize_go').click(function () {
-        //         $('.connect_quiz').fadeIn('fast')
-        //     })
-        // });
-
-        for (let pare of data.entries()) {
+        })     
+        // for (let pare of data.entries()) {
             // console.log((pare[0], pare[1]))
-        }
-
-        // for (let elem of form.elements) {
-        //     elem.value ? data.set(elem.name, elem.value) : null
         // }
     })
+
+    $('.quize_go').click(function () {
+        $('.connect_quiz').fadeTo('fast', 0, function() {
+            $(this).css('z-index', '-99999')
+            $('.quest_01').fadeTo('fast', 1)
+        })
+    })
+
+
+
+    $('.connect_question button').click(function () {
+        var parent = $(this).closest('.connect_question')
+        $(parent).fadeTo('fast', 0, function() {
+            $(parent).prev().fadeTo('fast', 1, function() {
+                // console.log($(`${parent} button`) )
+                
+            })
+            $(parent).css('z-index', '-99999')
+        })
+    })
+
+    
 
 
 
