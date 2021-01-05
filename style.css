@@ -107,8 +107,7 @@ h1 {
 }
 
 h1, .experience_list h4, .qualities h2, .qualities__list h4, .qualities__list h3,
-.qualities__list img, .connect_form_checkbox, .quize_start h4, .footer__term a,
-.connect_question h4 {
+.qualities__list img, .connect_form_checkbox, .quize_start h4, .footer__term a {
     margin-bottom: 20px;
 }
 
@@ -236,7 +235,7 @@ header .header_free {
 .connect_form, .connect_quiz {
     left: 0;
     right: 0;
-    padding: 40px 15px 60px;
+    padding: 40px 15px 0;
 }
 
 .connect_form h4, .connect_form p {
@@ -305,7 +304,7 @@ header .header_free {
 
 /* connect_quiz */
 
-.connect_quiz {
+.connect_height {
     /* min-height: 285px; */
     /* max-height: 285px; */
     height: 285px;
@@ -331,11 +330,14 @@ header .header_free {
     border-color: #FF844F;
 }
 
-.connect_question {
+.question_height {
     height: 620px;
+}
+
+.connect_question {
     left: 0;
     right: 0;
-    margin: 40px 15px 60px;
+    margin: 40px 15px 0;
 }
 
 .connect_question h6 {
@@ -371,14 +373,9 @@ header .header_free {
 .connect_question button:hover {
     border-color: #4C1ED3;
 }
-.connect_question button:hover .question_icon{
+.connect_question button:hover .question_icon {
     fill: #4C1ED3;
 }
-
-.connect_question button:hover .quest_03_icon_02 {
-    /* stroke: #FFFFFF; */
-}
-
 
 
 
@@ -615,9 +612,12 @@ footer {
     .footer__term a {
         font-weight: 400;
     }
-    .connect_form {
+    .connect {
+        height: 570px;
+    }
+    .connect_form, .connect_quiz {
         padding-top: 80px;
-        padding-bottom: 80px;
+        /* padding-bottom: 80px; */
     }
     .connect_form h4 {
         margin-bottom: 40px;
@@ -630,7 +630,12 @@ footer {
     .connect_form_input input, .connect_form_input select {
         max-width: 300px;
         height: 38px;
+    }
+    .connect_form_input select, .connect_form_input input[name="name"] {
         margin-bottom: 24px;
+    }
+    .connect_form_input input[name="email"], .connect_form_input input[name="phone"] {
+        margin-bottom: 20px;
     }
     .connect_form_input select, .connect_form_input input[name="phone"] {
         margin-left: auto;
@@ -641,7 +646,7 @@ footer {
         height: 50px;
         margin: 0 auto;
     }
-    .connect_quiz, .connect_question {
+    .connect_height, .question_height {
         /* min-height: 885px; */
         /* max-height: 885px; */
         height: 885px;
@@ -687,17 +692,16 @@ footer {
 
     .connect_question {
         margin-top: 80px;
-        margin-bottom: 95px;
         padding: 40px 123px 110px;
     }
     .connect_question>svg {
         width: 40px;
         height: 415px;
         left: 4%;
-        top: 24%;
+        top: 25%;
     }
     .connect_question h4 {
-        margin-bottom: 60px;
+        height: 90px;
     }
     .connect_question button {
         width: 48%;
@@ -706,6 +710,9 @@ footer {
         text-align: center;
         flex-direction: column!important;
         justify-content: center;
+        margin-bottom: unset;
+    }
+    .connect_question button:nth-child(-n+2) {
         margin-bottom: 30px;
     }
     .question_icon {

@@ -14,13 +14,13 @@ $(document).ready(function () {
                 $.each(data.countries, function (key, val) {
                     $('#connectForm select').append(`<option value="${val.name}" data-code="${val.code}">${val.name}</option>`)
                     if (geo.country === val.name) {
-                        $('#connectForm select').val(val.name)
-                        $('#connectForm input[name=phone]').val(val.code)
+                        $('#connectForm select').val( val.name )
+                        $('#connectForm input[name=phone]').val( val.code )
                     }
                 });
             })
             $('#connectForm select').change(function () {
-                $('#connectForm input[name=phone]').val($(this).find(':selected').data('code'))
+                $('#connectForm input[name=phone]').val( $(this).find(':selected').data('code') )
             })
             // $.getJSON("./phone.json", function (data) {
             //     $.each(data, function (key, val) {
@@ -54,33 +54,55 @@ $(document).ready(function () {
     //       console.log( "complete" );
     //     });
 
-    var data = new FormData()
+    var data = null
 
     $('#connectForm').submit(function (e) {
         e.preventDefault()
-        $(this.elements).each(function () {
-            this.value ? data.set(this.name, this.value) : null
-            // console.log(this.value)
-        })
+        data = new FormData(this)
+
         $('.connect_form').fadeTo('fast', 0, function() {
             $(this).css('z-index', '-99999')
 
-            // console.log($('.connect_quiz').height(), $('.connect_quiz').outerHeight())
             $('.connect_quiz').fadeTo('fast', 1, function() {
                 $('body,html').animate({scrollTop: $('.connect').offset().top},200)
-                $('.connect').height($(this).outerHeight())
+                $('.connect').addClass('connect_height')
+                // $('.connect').height($(this).outerHeight())
             })
-        })     
-        // for (let pare of data.entries()) {
-            // console.log((pare[0], pare[1]))
-        // }
+        })
+
     })
 
+
+    $('.goNext').click(function() {
+        // var parent = $(this).closest('.nextTo')
+        // parent.fadeTo('fast', 0, function() {
+        //     parent.prev().fadeTo('fast', 1, function() {
+
+        //     })
+        // }).css('z-index', '-99999')
+      
+        $('.connect').addClass('question_height')
+        $(this).closest('.nextTo')
+        .css('z-index', '-99999')
+        .fadeTo('fast', 0)
+        .prev().fadeTo('fast', 1)
+
+        if ($(this).data('question')) {
+            data.append($(this).data('question'), $(this).text().trim())
+        }
+
+        for (let pare of data.entries()) {
+            console.log(pare)
+        }
+
+    })
+
+    /*
     $('.quize_go').click(function () {
         $('.connect_quiz').fadeTo('fast', 0, function() {
             $(this).css('z-index', '-99999')
             $('.quest_01').fadeTo('fast', 1)
-            // console.log($(this).outerHeight())
+            // console.log($('.connect_quiz').height(), $(this).outerHeight())
             $('.connect').height($('.connect_question').outerHeight())
         })
     })
@@ -97,7 +119,7 @@ $(document).ready(function () {
             $(parent).css('z-index', '-99999')
         })
     })
-
+*/
     
 
 
@@ -111,12 +133,12 @@ $(document).ready(function () {
     //     }
     // }
 
-    const addValue = (key, value) => {
-        data.set(key, value)
+    // const addValue = (key, value) => {
+        // data.set(key, value)
 
-        for (let pare of data.entries()) {
+        // for (let pare of data.entries()) {
             // console.log((pare[0], pare[1]))
-        }
+        // }
 
 
         // fetch('', {
@@ -128,9 +150,9 @@ $(document).ready(function () {
         //     // console.log(error)
         // })
 
-    }
+    // }
 
-    addValue()
+    // addValue()
 
 
 });
