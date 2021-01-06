@@ -11,14 +11,8 @@ body {
 }
 
 :root {
-    /* --red: #FF0000; */
     --blue: #5A17FF;
-    /* --middleblue: #86A0AD; */
-    /* --lightblue: #C2CFD6; */
-    /* --orange: #FF9100; */
-    /* --grey: #707070; */
-    /* --lightgrey: #B9B9B9; */
-    /* --slgrey: #CCCCCC; */
+    --orange: #FF844F;
 }
 
 a:hover {
@@ -36,10 +30,6 @@ button:focus {
 button {
     cursor: pointer;
 }
-
-/* .relative {
-    position: relative;
-} */
 
 h1 {
     font-size: 36px;
@@ -106,9 +96,16 @@ h1 {
     margin-top: 30px;
 }
 
-h1, .experience_list h4, .qualities h2, .qualities__list h4, .qualities__list h3,
-.qualities__list img, .connect_form_checkbox, .quize_start h4, .footer__term a {
+h1, .experience_list h4, .qualities h2, .qualities__list h4, .qualities__list h3, .qualities__list img, .connect_form_checkbox, .quize_start h4, .footer__term a, .connect_question h4, .connect_result h6 {
     margin-bottom: 20px;
+}
+
+.experience_list ul li, .connect_form_input input, .connect_form_input select, .connect_question p {
+    margin-bottom: 12px;
+}
+
+.qualities__list ul li, .connect_question button, .connect_result a {
+    margin-bottom: 10px;
 }
 
 header article h4, header .header_limited {
@@ -157,7 +154,6 @@ header .header_free {
 }
 
 .experience_list ul li {
-    margin-bottom: 12px;
     line-height: 19px;
 }
 
@@ -187,7 +183,6 @@ header .header_free {
 }
 
 .qualities__list ul li {
-    margin-bottom: 10px;
     line-height: 19px;
 }
 
@@ -229,7 +224,7 @@ header .header_free {
 .connect {
     height: 600px;
     background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
-    transition: height .4s;
+    transition: height .2s;
 }
 
 .connect_form, .connect_quiz {
@@ -259,7 +254,6 @@ header .header_free {
 .connect_form_input input, .connect_form_input select {
     width: 100%;
     height: 32px;
-    margin-bottom: 12px;
     border-radius: 10px;
 }
 
@@ -305,8 +299,6 @@ header .header_free {
 /* connect_quiz */
 
 .connect_height {
-    /* min-height: 285px; */
-    /* max-height: 285px; */
     height: 285px;
 }
 
@@ -326,8 +318,8 @@ header .header_free {
 }
 
 .quize_start button:hover {
-    color: #FF844F!important;
-    border-color: #FF844F;
+    color: var(--orange)!important;
+    border-color: var(--orange);
 }
 
 .question_height {
@@ -340,16 +332,13 @@ header .header_free {
     margin: 40px 15px 0;
 }
 
-.connect_question h6 {
+.connect_question p {
     color: #ABABAB;
 }
-
-
 
 .connect_question button {
     width: 100%;
     height: 82px;
-    margin-bottom: 10px;
     padding: 20px;
     line-height: 19px;
     text-align: left;
@@ -363,9 +352,11 @@ header .header_free {
     height: 42px;
     margin-right: 10%;
 }
+
 .question_icon:not(.quest_03_icon_02):not(.quest_03_icon_03) {
     fill: #8A919D;
 }
+
 .quest_03_icon_02, .quest_03_icon_03 {
     fill: #FFFFFF;
 }
@@ -373,20 +364,10 @@ header .header_free {
 .connect_question button:hover {
     border-color: #4C1ED3;
 }
+
 .connect_question button:hover .question_icon {
     fill: #4C1ED3;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* seo section */
 
@@ -472,10 +453,10 @@ footer {
     .qualities h2 {
         font-size: 40px;
     }
-    .connect_question h4 {
+    .connect_question h4, .connect_result h5 {
         font-size: 32px;
     }
-    header h4, .experience_list h4, .qualities__list h4, .connect_form h4, .connect_question h6 {
+    header h4, .experience_list h4, .qualities__list h4, .connect_form h4, .connect_question p, .connect_result h6 {
         font-size: 24px;
     }
     .qualities__list ul li, footer .footer_nav ul li:first-of-type, .connect_question button {
@@ -496,7 +477,7 @@ footer {
     .connect_form label {
         font-size: 10px;
     }
-    header>.container, .experience, .qualities__dispaly, .footer__term {
+    header>.container, .experience, .qualities__dispaly, .footer__term, .connect_result>div {
         -webkit-box-orient: horizontal!important;
         -webkit-box-direction: normal!important;
         -ms-flex-direction: row!important;
@@ -549,8 +530,10 @@ footer {
         padding-top: 80px;
         padding-bottom: 60px;
     }
-    .qualities h2 {
+    .qualities h2, .connect_form h4, .connect_result h6 {
         margin-bottom: 40px;
+    }
+    .qualities h2, .connect_question button, .connect_result {
         text-align: center;
     }
     .qualities__dispaly {
@@ -597,7 +580,7 @@ footer {
     footer .footer_nav ul li:first-of-type {
         margin-bottom: 8px;
     }
-    .footer_pay, .connect_form p, .quize_add h2, .quize_add button {
+    .footer_pay, .connect_form p, .quize_add h2, .quize_add button, .connect_form_input input[name="email"], .connect_form_input input[name="phone"], .connect_question p, .connect_result h5 {
         margin-bottom: 20px;
     }
     .footer_pay {
@@ -617,10 +600,6 @@ footer {
     }
     .connect_form, .connect_quiz {
         padding-top: 80px;
-        /* padding-bottom: 80px; */
-    }
-    .connect_form h4 {
-        margin-bottom: 40px;
     }
     .connect_form_input {
         display: grid;
@@ -634,9 +613,6 @@ footer {
     .connect_form_input select, .connect_form_input input[name="name"] {
         margin-bottom: 24px;
     }
-    .connect_form_input input[name="email"], .connect_form_input input[name="phone"] {
-        margin-bottom: 20px;
-    }
     .connect_form_input select, .connect_form_input input[name="phone"] {
         margin-left: auto;
     }
@@ -647,8 +623,6 @@ footer {
         margin: 0 auto;
     }
     .connect_height, .question_height {
-        /* min-height: 885px; */
-        /* max-height: 885px; */
         height: 885px;
     }
     .quize_add, .quize_start, .connect_question {
@@ -672,8 +646,8 @@ footer {
         width: 171px;
         height: 50px;
         border-radius: 5px;
-        border: 2px solid #FF844F;
-        background: #FF844F;
+        border: 2px solid var(--orange);
+        background: var(--orange);
         color: #FFFFFF;
     }
     .quize_add button svg {
@@ -688,8 +662,6 @@ footer {
         text-align: left!important;
         background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
     }
-
-
     .connect_question {
         margin-top: 80px;
         padding: 40px 123px 110px;
@@ -707,7 +679,6 @@ footer {
         width: 48%;
         height: 192px;
         line-height: 24px;
-        text-align: center;
         flex-direction: column!important;
         justify-content: center;
         margin-bottom: unset;
@@ -721,8 +692,14 @@ footer {
         margin-right: unset;
         margin-bottom: 15px;
     }
-
-   
+    .connect_result {
+        padding: 60px 40px 110px;
+    }
+    .connect_result h6 {
+        max-width: 510px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (min-width: 768px) {

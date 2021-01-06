@@ -107,17 +107,39 @@
         </div>
         <div class="connect">
             <div class="container relative">
-
-                <section class="opacity_0 connect_question absolute">
-                    <h4 class="font-weight-normal">That’s it! </h4>
+                <section class="opacity_0 connect_result connect_question absolute">
+                    <h5>That’s it!</h5>
+                    <h6 class="font-weight-normal">These are the solutions that we would like to suggest to you
+                        according to your answers</h6>
+                    <div class="d-flex flex-column justify-content-between align-items-center">
+                        <a href="">
+                            <picture>
+                                <source media="(max-width: 991px)" srcset="./images/connect_result_01_mob.png">
+                                <source media="(min-width: 992px)" srcset="./images/connect_result_01_desk.png">
+                                <img src="./images/connect_result_01_mob.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="">
+                            <picture>
+                                <source media="(max-width: 991px)" srcset="./images/connect_result_02_mob.png">
+                                <source media="(min-width: 992px)" srcset="./images/connect_result_02_desk.png">
+                                <img src="./images/connect_result_02_mob.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="">
+                            <picture>
+                                <source media="(max-width: 991px)" srcset="./images/connect_result_03_mob.png">
+                                <source media="(min-width: 992px)" srcset="./images/connect_result_03_desk.png">
+                                <img src="./images/connect_result_03_mob.png" alt="">
+                            </picture>
+                        </a>
+                    </div>
                 </section>
-
-
-                <section class="opacity_0 connect_question absolute nextTo">
+                <section class="opacity_0 connect_question absolute nextTo" data-send="true">
                     <svg class="d-none d-lg-block absolute">
                         <use xlink:href="./sprites.svg#quest_04"></use>
                     </svg>
-                    <h6 class="font-weight-normal">Question 4 of 4</h6>
+                    <p>Question 4 of 4</p>
                     <h4>How much capital should you invest to be successful?</h4>
                     <div class="d-flex justify-content-between flex-wrap">
                         <button class="goNext d-flex align-items-center" data-question="Question -4:">
@@ -146,12 +168,11 @@
                         </button>
                     </div>
                 </section>
-
                 <section class="opacity_0 connect_question absolute nextTo">
                     <svg class="d-none d-lg-block absolute">
                         <use xlink:href="./sprites.svg#quest_03"></use>
                     </svg>
-                    <h6 class="font-weight-normal">Question 3 of 4</h6>
+                    <p>Question 3 of 4</p>
                     <h4>How much free time do you have per day?</h4>
                     <div class="d-flex justify-content-between flex-wrap">
                         <button class="goNext d-flex align-items-center" data-question="Question -3:">
@@ -180,12 +201,11 @@
                         </button>
                     </div>
                 </section>
-
                 <section class="opacity_0 connect_question absolute nextTo">
                     <svg class="d-none d-lg-block absolute">
                         <use xlink:href="./sprites.svg#quest_02"></use>
                     </svg>
-                    <h6 class="font-weight-normal">Question 2 of 4</h6>
+                    <p>Question 2 of 4</p>
                     <h4>What are you looking to achieve in trading?</h4>
                     <div class="d-flex justify-content-between flex-wrap">
                         <button class="goNext d-flex align-items-center" data-question="Question -2:">
@@ -214,12 +234,11 @@
                         </button>
                     </div>
                 </section>
-
                 <section class="opacity_0 connect_question absolute nextTo">
                     <svg class="d-none d-lg-block absolute">
                         <use xlink:href="./sprites.svg#quest_01"></use>
                     </svg>
-                    <h6 class="font-weight-normal">Question 1 of 4</h6>
+                    <p>Question 1 of 4</p>
                     <h4>For how long have you been trading?</h4>
                     <div class="d-flex justify-content-between flex-wrap">
                         <button class="goNext d-flex align-items-center" data-question="Question -1:">
@@ -283,7 +302,8 @@
                     </article>
                 </div>
                 <div class="connect_form text-white absolute">
-                    <h4 class="text-uppercase text-center font-weight-bold">GET YOUR Tradenet <br> Simulator Now!</h4>
+                    <h4 class="text-uppercase text-center font-weight-bold">GET YOUR Tradenet <br> Simulator Now!
+                    </h4>
                     <form action="" id="connectForm">
                         <p class="open_sans text-center font-weight-bold text-uppercase d-lg-none">Make sure your
                             details are entered
@@ -291,18 +311,19 @@
                             Tradenet will reject any <br>
                             incorrectly filled applications
                         </p>
-                        <p class="open_sans text-center font-weight-bold d-none d-lg-block">Make sure your details are
+                        <p class="open_sans text-center font-weight-bold d-none d-lg-block">Make sure your details
+                            are
                             entered accurately <br>
                             Tradenet will reject any incorrectly filled applications</p>
                         <div class="connect_form_input">
-                            <input type="text" name="name" placeholder="Name" autocomplete="off">
+                            <input type="text" name="name" placeholder="Name" autocomplete="off" >
                             <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                placeholder="Email" autocomplete="off">
-                            <select name="country" autocomplete="off">
+                                placeholder="Email" autocomplete="off" >
+                            <select name="country" autocomplete="off" required>
                                 <option value="" disabled selected hidden>Country</option>
                             </select>
                             <input type="text" name="phone" pattern="^[0-9-+\s()]*$" minlength="8" placeholder="Phone"
-                                autocomplete="off">
+                                autocomplete="off" required>
                         </div>
                         <div class="d-flex connect_form_checkbox">
                             <input type="checkbox" name="checkbox" id="checkbox">
@@ -484,7 +505,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <!-- <script src="./codes.json"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./main.js"></script>
 </body>
