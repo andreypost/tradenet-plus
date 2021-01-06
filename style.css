@@ -10,27 +10,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-:root {
-    --blue: #5A17FF;
-    --orange: #FF844F;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-button {
-    border: none;
-}
-
-button:focus {
-    outline: none;
-}
-
-button {
-    cursor: pointer;
-}
-
 h1 {
     font-size: 36px;
 }
@@ -79,8 +58,29 @@ footer ul:not(.footer_challenge) li:first-of-type {
     text-transform: uppercase;
 }
 
+button {
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+:root {
+    --blue: #5A17FF;
+    --orange: #FF844F;
+}
+
 .black {
     color: #111111;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 /* header section */
