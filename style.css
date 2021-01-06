@@ -573,6 +573,10 @@ footer {
     .qualities .header_free {
         margin-top: 60px;
     }
+    .seo {
+        padding-top: 30px;
+        padding-bottom: 70px;
+    }
     .footer_nav {
         display: flex;
         justify-content: space-between;
