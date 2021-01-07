@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var data = null, phone = null
     $.ajax({
         url: "https://get.geojs.io/v1/ip/geo.js",
         dataType: "jsonp",
@@ -9,34 +10,37 @@ $(document).ready(function () {
                 $.each(data.countries, function (key, val) {
                     $('#connectForm select').append(`<option value="${val.name}" data-code="${val.code}">${val.name}</option>`)
                     if (geo.country === val.name) {
-                        $('#connectForm select').val( val.name )
-                        $('#connectForm input[name=phone]').val( val.code )
+                        $('#connectForm select').val(val.name)
+                        $('#connectForm input[name="phone"]').val(val.code)
+                        phone = val.code
                     }
                 });
             })
             $('#connectForm select').change(function () {
-                $('#connectForm input[name=phone]').val( $(this).find(':selected').data('code') )
+                $('#connectForm input[name="phone"]').val(phone = $(this).find(':selected').data('code'))
             })
         })
-
-    var data = null
     $('#connectForm').submit(function (e) {
         e.preventDefault()
         data = new FormData(this)
-        $('.connect_form').fadeTo('fast', 0, function() {
+        if ($('#connectForm input[name="phone"]').val() === phone) {
+            $(this).find('input[name="phone"]').focus()
+            return
+        }
+        $('.connect_form').fadeTo('fast', 0, function () {
             $(this).css('z-index', '-99999')
-            $('.connect_quiz').fadeTo('fast', 1, function() {
-                $('body,html').animate({scrollTop: $('.connect').offset().top},200)
+            $('.connect_quiz').fadeTo('fast', 1, function () {
+                $('body,html').animate({ scrollTop: $('.connect').offset().top }, 200)
                 $('.connect').addClass('connect_height')
             })
         })
     })
-    $('.goNext').click(function() {
+    $('.goNext').click(function () {
         $('.connect').addClass('question_height')
         $(this).closest('.nextTo')
-        .css('z-index', '-99999')
-        .fadeTo('fast', 0)
-        .prev().fadeTo('fast', 1)
+            .css('z-index', '-99999')
+            .fadeTo('fast', 0)
+            .prev().fadeTo('fast', 1)
         if ($(this).data('question')) {
             data.append($(this).data('question'), $(this).text().trim())
         }
@@ -47,10 +51,10 @@ $(document).ready(function () {
             fetch('', {
                 method: 'POST',
                 body: data
-              })
-              .then(response => response.json())
-              .then(result => console.log(result))
-              .catch(error => console.log(error))
+            })
+                .then(response => response.json())
+                .then(result => console.log(result))
+                .catch(error => console.log(error))
         }
     })
 });
