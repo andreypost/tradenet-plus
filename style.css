@@ -446,7 +446,12 @@ footer {
     margin-left: 20px;
 }
 
-@media (min-width: 1200px) {}
+@media (min-width: 768px) {
+    .footer_nav {
+        -ms-grid-columns: 33% 33% 33%;
+        grid-template-columns: 33% 33% 33%;
+    }
+}
 
 @media (min-width: 992px) {
     .qualities__work {
@@ -599,7 +604,7 @@ footer {
         padding-top: 30px;
         padding-bottom: 70px;
     }
-    footer .footer_nav {
+    .footer_nav {
         grid-template-columns: repeat(6, auto);
     }
     footer .footer_nav ul li:first-of-type {
@@ -735,12 +740,3 @@ footer {
         margin-right: auto;
     }
 }
-
-@media (min-width: 768px) {
-    .footer_nav {
-        -ms-grid-columns: 33% 33% 33%;
-        grid-template-columns: 33% 33% 33%;
-    }
-}
-
-@media (min-width: 576px) {}
