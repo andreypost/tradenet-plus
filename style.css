@@ -179,6 +179,8 @@ header .header_free {
 
 .qualities__list ul {
     margin-right: auto;
+    -moz-padding-start: 20px;
+    -webkit-padding-start: 20px;
     padding-inline-start: 20px;
 }
 
@@ -271,9 +273,10 @@ header .header_free {
 
 .connect_form_input select {
     padding-right: 20px;
-    background: url(./images/Arrow.svg) no-repeat 97% center;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
+    background: url(./images/Arrow.svg) no-repeat 97% center;
 }
 
 .connect_form_checkbox label {
@@ -390,11 +393,15 @@ footer {
 }
 
 .footer_nav {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 50% 50%;
     grid-template-columns: 50% 50%;
 }
 
 .footer_nav ul {
+    -moz-padding-start: unset;
+    -webkit-padding-start: unset;
     padding-inline-start: unset;
 }
 
@@ -407,6 +414,8 @@ footer {
 }
 
 .footer_challenge li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -487,22 +496,35 @@ footer {
         max-width: 430px;
     }
     header>div>article, .footer__term>img, .footer_education, .connect_form_input input[name="name"] {
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 1;
         order: 1;
     }
     header>div>img, .footer__term>div, .footer_about, .connect_form_input select[name="country"] {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 2;
         order: 2;
     }
     .footer_programs, .connect_form_input input[name="email"] {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 3;
         order: 3;
     }
     .footer_contacts, .connect_form_input input[name="phone"] {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 4;
         order: 4;
     }
     .footer_trading {
+        -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 5;
         order: 5;
     }
     .footer_nav_social {
+        -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 6;
         order: 6;
+        margin-left: auto;
     }
     header article h4, header .header_limited {
         margin-bottom: 47px;
@@ -577,9 +599,8 @@ footer {
         padding-top: 30px;
         padding-bottom: 70px;
     }
-    .footer_nav {
-        display: flex;
-        justify-content: space-between;
+    footer .footer_nav {
+        grid-template-columns: repeat(6, auto);
     }
     footer .footer_nav ul li:first-of-type {
         margin-bottom: 8px;
@@ -606,8 +627,12 @@ footer {
         padding-top: 80px;
     }
     .connect_form_input {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
     .connect_form_input input, .connect_form_input select {
@@ -682,10 +707,15 @@ footer {
     .connect_question button {
         width: 48%;
         height: 192px;
-        line-height: 24px;
+        -webkit-box-orient: vertical!important;
+        -webkit-box-direction: normal!important;
+        -ms-flex-direction: column!important;
         flex-direction: column!important;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         margin-bottom: unset;
+        line-height: 24px;
     }
     .connect_question button:nth-child(-n+2) {
         margin-bottom: 30px;
@@ -708,6 +738,7 @@ footer {
 
 @media (min-width: 768px) {
     .footer_nav {
+        -ms-grid-columns: 33% 33% 33%;
         grid-template-columns: 33% 33% 33%;
     }
 }

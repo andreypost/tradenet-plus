@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var data = null, phone = null
+    var data = null, code = null
     $.ajax({
         url: "https://get.geojs.io/v1/ip/geo.js",
         dataType: "jsonp",
@@ -12,18 +12,18 @@ $(document).ready(function () {
                     if (geo.country === val.name) {
                         $('#connectForm select').val(val.name)
                         $('#connectForm input[name="phone"]').val(val.code)
-                        phone = val.code
+                        code = val.code
                     }
                 });
             })
             $('#connectForm select').change(function () {
-                $('#connectForm input[name="phone"]').val(phone = $(this).find(':selected').data('code'))
+                $('#connectForm input[name="phone"]').val(code = $(this).find(':selected').data('code'))
             })
         })
     $('#connectForm').submit(function (e) {
         e.preventDefault()
         data = new FormData(this)
-        if ($('#connectForm input[name="phone"]').val() === phone) {
+        if ($('#connectForm input[name="phone"]').val() === code) {
             $(this).find('input[name="phone"]').focus()
             return
         }
@@ -41,9 +41,7 @@ $(document).ready(function () {
             .css('z-index', '-99999')
             .fadeTo('fast', 0)
             .prev().fadeTo('fast', 1)
-        if ($(this).data('question')) {
-            data.append($(this).data('question'), $(this).text().trim())
-        }
+        if ($(this).data('question')) data.append($(this).data('question'), $(this).text().trim())
         if ($(this).closest('.nextTo').data('send')) {
             for (let pare of data.entries()) {
                 console.log(pare)
