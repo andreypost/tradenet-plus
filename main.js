@@ -11,8 +11,7 @@ $(document).ready(function () {
                     $('#connectForm select').append(`<option value="${val.name}" data-code="${val.code}">${val.name}</option>`)
                     if (geo.country === val.name) {
                         $('#connectForm select').val(val.name)
-                        $('#connectForm input[name="phone"]').val(val.code)
-                        code = val.code
+                        $('#connectForm input[name="phone"]').val(code = val.code)
                     }
                 });
             })
@@ -55,4 +54,5 @@ $(document).ready(function () {
                 .catch(error => console.log(error))
         }
     })
+    console.log(navigator, navigator.language)
 });
