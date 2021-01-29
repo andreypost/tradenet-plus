@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
     font-family: 'Rubik', sans-serif;
 }
@@ -122,6 +129,8 @@ header .header_free {
     height: 56px;
     background-color: #E96B2C;
     border-radius: 5px;
+    -webkit-transition: background-color .2s;
+    -o-transition: background-color .2s;
     transition: background-color .2s;
 }
 
@@ -140,6 +149,7 @@ header .header_free {
     margin-top: 31%;
     margin-bottom: 40px;
     padding: 20px 15px 35px 15px;
+    -webkit-box-shadow: 0px 9px 90px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 9px 90px rgba(0, 0, 0, 0.25);
     border-radius: 2px;
     z-index: 99;
@@ -172,6 +182,7 @@ header .header_free {
 
 .qualities__list {
     padding: 20px 10px 30px;
+    -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     background: var(--blue);
@@ -179,7 +190,6 @@ header .header_free {
 
 .qualities__list ul {
     margin-right: auto;
-    -moz-padding-start: 20px;
     -webkit-padding-start: 20px;
     padding-inline-start: 20px;
 }
@@ -225,7 +235,11 @@ header .header_free {
 
 .connect {
     height: 600px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5E19CE), to(#4021D6));
+    background: -o-linear-gradient(top, #5E19CE 0%, #4021D6 100%);
     background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
+    -webkit-transition: height .2s;
+    -o-transition: height .2s;
     transition: height .2s;
 }
 
@@ -249,6 +263,7 @@ header .header_free {
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25);
     box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25);
     background: #FFFFFF;
 }
@@ -261,6 +276,22 @@ header .header_free {
 
 .connect_form input, .connect_form_input select {
     border: 1px solid #ABABAB;
+}
+
+.connect_form input::-webkit-input-placeholder {
+    color: #17181A;
+}
+
+.connect_form input::-moz-placeholder {
+    color: #17181A;
+}
+
+.connect_form input:-ms-input-placeholder {
+    color: #17181A;
+}
+
+.connect_form input::-ms-input-placeholder {
+    color: #17181A;
 }
 
 .connect_form input, .connect_form input::placeholder, .connect_form_input select {
@@ -308,6 +339,7 @@ header .header_free {
 .quize_add, .connect_question {
     padding: 20px 20px 40px;
     border-radius: 10px;
+    -webkit-box-shadow: 0px 4px 90px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 90px rgba(0, 0, 0, 0.25);
     background: #FFFFFF;
 }
@@ -400,7 +432,6 @@ footer {
 }
 
 .footer_nav ul {
-    -moz-padding-start: unset;
     -webkit-padding-start: unset;
     padding-inline-start: unset;
 }
@@ -605,6 +636,8 @@ footer {
         padding-bottom: 70px;
     }
     .footer_nav {
+        -ms-grid-columns: repeat(6, auto);
+        /* -ms-grid-columns: (auto)[6]; */
         grid-template-columns: repeat(6, auto);
     }
     footer .footer_nav ul li:first-of-type {
@@ -694,6 +727,8 @@ footer {
         border: 2px solid #FFFFFF;
         border-radius: 10px;
         text-align: left!important;
+        background: -webkit-gradient(linear, left top, left bottom, from(#5E19CE), to(#4021D6));
+        background: -o-linear-gradient(top, #5E19CE 0%, #4021D6 100%);
         background: linear-gradient(180deg, #5E19CE 0%, #4021D6 100%);
     }
     .connect_question {
