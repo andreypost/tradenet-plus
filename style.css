@@ -86,8 +86,8 @@ a:hover {
     text-decoration: none;
 }
 
-button {
-    cursor: pointer;
+a, button {
+    cursor: unset;
 }
 
 /* header section */
@@ -773,5 +773,8 @@ footer {
         max-width: 510px;
         margin-left: auto;
         margin-right: auto;
+    }
+    a, button, form select, #checkbox, .connect_form_checkbox label {
+        cursor: pointer;
     }
 }
